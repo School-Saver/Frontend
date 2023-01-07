@@ -1,0 +1,61 @@
+.md-text {
+    font-size: calc(var(--lg-font-size) * var(--multiplier));
+    width: 85.42vw;
+    margin: auto;
+    text-align: center;
+}
+
+.bookmark-name, li {
+    width: 50%;
+    margin: 0;
+}
+
+.bookmark-name {
+    display: inline;
+    position: relative;
+
+    font-size: var(--lg-font-size);
+    vertical-align: top;
+    font-weight: bold;
+}   
+
+.link-container {
+    position: relative;
+    font-size: calc(64 / 1440 * 100vw);
+    width: 50%;
+    left: calc(200 / 1440 * 100vw);
+}
+
+
+.add-bookmark {
+    position: relative;
+
+
+    padding: 0.75em;
+
+    border-radius: var(--sm-radius);
+    font-size: var(--md-font-size);
+    
+    left: 50%;
+    transform: translateX(-50%);
+    
+
+    font-family: var(--Jost);
+
+    border: 0;
+    margin: 0;
+    margin-top: 1.1em;
+    margin-bottom: 1.1em;
+
+    background-color: var(--light-blue);
+    color: white;
+}
+
+li:has(.test) {
+    position: relative;
+}
+
+.test {
+    position: relative;
+    margin-bottom: 50px;
+}

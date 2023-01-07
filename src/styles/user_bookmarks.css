@@ -1,0 +1,39 @@
+div:has(>.bookmark-name) {
+    display: grid;
+
+    align-items: center;
+
+    grid-template-columns: 2fr 1fr;
+
+    width: calc(100% - (150 / 1440 * 100vw));
+
+    margin: 0;
+    margin-top: calc(88 / 1440 * 100vw);
+    margin-inline: auto;
+}
+
+.delete-button {
+    justify-self: right;
+    
+    padding: 0.3em;
+    padding-inline: 1.1em;
+    
+    outline: 0;
+    border: 0;
+
+    border-radius: var(--sm-radius);
+
+    background-color: var(--red);
+
+    margin-right: calc(40 / 1440 * 100vw);
+
+    font-size: calc(42 / 1440 * 100vw);
+
+    color: white;
+}
+
+.delete-button {
+    padding: 0.3em;
+    padding-inline: 0.7em;
+    font-size: calc(var(--md-font-size) - 0.1em);
+}
