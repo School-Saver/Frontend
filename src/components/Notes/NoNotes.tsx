@@ -29,7 +29,6 @@ export default function NotEnoughNotes({ id, notes }: { id : number, notes: any}
         })
     })
 
-
     return (
         <>
             <Navbar />

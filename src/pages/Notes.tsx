@@ -9,7 +9,7 @@ import { containsNotes, getUserId, getUserNotes } from "../utils/util";
 export default function Notes() {
     
     const [hasNotes, setHasNotes] = useState<boolean | null>(null)
-    const [notes, setNotes] = useState<any>()
+    const [notes, setNotes] = useState<any>(null)
     const [id, setId] = useState<number | null>(null);
     const [loading, setLoading] = useState<boolean>(true);
     const navigate = useNavigate()
@@ -35,12 +35,11 @@ export default function Notes() {
             })
         })()
     }, [notes])
-
     return (
         <>
             { 
-                (hasNotes === false) && (id === 0 || id) && notes ? <NotEnoughNotes id={id} notes={notes} /> : 
-                (hasNotes === true) && (id === 0 || id) && notes ? <UserNotes id={id} notes={notes} /> : null
+                (hasNotes === false) && (id === 0 || id) && notes !== null ? <NotEnoughNotes id={id} notes={notes} /> : 
+                (hasNotes === true) && (id === 0 || id) && notes !== null ? <UserNotes id={id} notes={notes} /> : null
             }
         </>
     )

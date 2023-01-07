@@ -3,7 +3,8 @@ import { BookmarkRow } from "../interfaces/interface";
 import { createUserWithEmailAndPassword, signInWithEmailAndPassword, signOut } from "firebase/auth"
 import { auth } from "../firebase-config";
 
-const URL = "https://school-saver-production.up.railway.app"
+// const URL = "https://school-saver-production.up.railway.app"
+const URL = "http://localhost:5000"
 
 export async function createBookmark(bookmark: string, link: string) {
     try {
@@ -91,6 +92,7 @@ export async function getUserNotes(id: number): Promise<any | undefined> {
     } catch(err) {
         console.log(err)
     }
+    console.log("return nothing")
 }
 
 export async function createUserNotes(id: number, subject: string, day: string, note: string) {
@@ -247,7 +249,7 @@ export function getUserId(uid: string) {
 
 export async function generateId(): Promise<number | void> {
     try {
-        const response = await axios("${URL}/api/v1/bookmarks");
+        const response = await axios(`${URL}/api/v1/bookmarks`);
         const table = response.data;
         const rows: Array<BookmarkRow> = table.rows;
         const rowSize = table.rowCount
