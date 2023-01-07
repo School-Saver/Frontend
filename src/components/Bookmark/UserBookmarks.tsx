@@ -87,7 +87,7 @@ export default function UserBookmarks({ id }: Props) {
             { deleteConfirmation && (bookmark && link) && deleteBookmark(id, bookmark, link) }
             { buttonClicked && deleteConfirmation && setButtonClicked(false) }
             { !buttonClicked && deleteConfirmation && setDeleteConfirmation(false)}
-            {/* { deleteConfirmation && window.location.reload() } */}
+            { deleteConfirmation && window.location.reload() }
         </>
     )
 }
