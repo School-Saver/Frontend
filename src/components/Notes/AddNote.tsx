@@ -30,6 +30,7 @@ export default function AddNote({ notes, id, popUpRef, subject, day, note, curre
     const valid_note = validateNote()
 
     function validateSubject() {
+        // eslint-disable-next-line no-useless-escape
         return /[a-zA-Z0-9 \.-_]{4,37}/.test(newSubject)
     }
 
@@ -40,10 +41,11 @@ export default function AddNote({ notes, id, popUpRef, subject, day, note, curre
                 || "Thursday" === newDay ||   "Thu" === newDay || "Thur" === newDay || "Thrus" === newDay
                 || "Friday" === newDay || "Fri" === newDay 
                 || "Saturday" === newDay || "Sat" === newDay  
-                || "Sunday" === newDay || "Sun" == newDay)
+                || "Sunday" === newDay || "Sun" === newDay)
     }
 
     function validateNote() {
+        // eslint-disable-next-line no-useless-escape
         return /[a-zA-Z0-9 \._]{4,100}/.test(newNote)
     }
 

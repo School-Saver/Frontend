@@ -1,5 +1,4 @@
 import { useEffect, useRef, useState } from "react"
-import { Link } from "react-router-dom"
 import { BookmarkRow } from "../../interfaces/interface"
 import { deleteBookmark, getUserBookmarks } from "../../utils/util"
 import Navbar from "../Navbar/NavBar"
@@ -33,7 +32,7 @@ export default function UserBookmarks({ id }: Props) {
             setBookmarksData(await getUserBookmarks(id))
         })()
 
-    }, [])
+    }, [id])
 
     useEffect(() => {
         document.addEventListener("mousedown", (event) => {

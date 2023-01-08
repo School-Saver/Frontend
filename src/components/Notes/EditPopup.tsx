@@ -26,10 +26,12 @@ export default function EditPopup({ notes, id, popUpRef, subject, note, current_
     const valid_note = validateNote()
 
     function validateSubject() {
+        // eslint-disable-next-line no-useless-escape
         return /[a-zA-Z0-9 \.-_]{4,37}/.test(newSubject)
     }
 
     function validateNote() {
+        // eslint-disable-next-line no-useless-escape
         return /[a-zA-Z0-9 \._]{4,100}/.test(newNote)
     }
 
@@ -47,7 +49,7 @@ export default function EditPopup({ notes, id, popUpRef, subject, note, current_
         } else {
             if (current_note && current_day) {
                 const index = notes[current_subject][current_day]?.indexOf(current_note)
-                if (index != -1 && typeof index === "number" && newNote) {
+                if (index !== -1 && typeof index === "number" && newNote) {
                     if (!valid_note) {
                         setMessage("Must be a valid note");
                         return

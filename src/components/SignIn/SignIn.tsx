@@ -1,4 +1,4 @@
-import { useEffect, useRef, useState } from "react"
+import { useState } from "react"
 import { errorHandler, signin } from "../../utils/util";
 import "../../styles/sign_in.css";
 
@@ -13,7 +13,9 @@ export default function SignIn ({ popUpRef }: { popUpRef: React.RefObject<HTMLDi
     const [valid, setValid] = useState(true)
     const [message, setMessage] = useState("")
 
+    // eslint-disable-next-line no-useless-escape
     const valid_email = /[a-zA-Z0-9@\._]{8,}/.test(email) 
+    // eslint-disable-next-line no-useless-escape
     const valid_password = /[a-zA-Z0-9@\._]{8,}/.test(password)
     
     const valid_input = valid_email && valid_password && email && password

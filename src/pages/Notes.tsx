@@ -15,7 +15,7 @@ export default function Notes() {
     const navigate = useNavigate()
 
     async function initialize() {
-        if (id === 0 || id && loading) {
+        if ((id === 0 || id) && loading) {
             setHasNotes(await containsNotes(id))
             setNotes(await getUserNotes(id));
             setLoading(false);
@@ -34,6 +34,7 @@ export default function Notes() {
                 }
             })
         })()
+    // eslint-disable-next-line react-hooks/exhaustive-deps
     }, [notes])
     return (
         <>

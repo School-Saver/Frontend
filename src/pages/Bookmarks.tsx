@@ -15,7 +15,7 @@ export default function Bookmarks() {
     const navigate = useNavigate()
 
     async function initialize() {
-        if (id === 0 || id && loading) {
+        if ((id === 0 || id) && loading) {
             setHasBookmarks(await containsBookmarks(id))
             setBookmarks(getUserBookmarks(id))
             setLoading(false)
@@ -34,6 +34,7 @@ export default function Bookmarks() {
                 }
             })
         })()
+    // eslint-disable-next-line react-hooks/exhaustive-deps
     }, [bookmarks])
 
     return (
