@@ -8,10 +8,6 @@ const URL = "https://backend-production-3c77.up.railway.app"
 export async function createBookmark(bookmark: string, link: string) {
     try {
         await axios.post(`${URL}/api/v1/bookmarks/`, {
-            headers: {
-                'Accept': 'application/json',
-                'Content-Type': 'application/json'
-            },
             bookmark: bookmark,
             link: link
         })
