@@ -6,6 +6,7 @@ import { auth } from "../../firebase-config"
 import LogOut from "../LogOut/LogOut"
 import { logout } from "../../utils/util"
 import { onAuthStateChanged } from "firebase/auth"
+import logo from "../../img/logo.png"
 
 export default function Navbar() {
     const [logOutClicked, setLogOutClicked] = useState(false)
@@ -68,7 +69,7 @@ export default function Navbar() {
     return (
         <>
             <nav>
-                <Link to="/"><img src="../../../public/favicon-32x32.png" className="nav-title" alt="logo"/></Link>
+                <Link to="/"><img src={logo} className="nav-title" alt="logo"/></Link>
                 <Link to="/notes"><div className="nav-title">Notes</div></Link>
                 <Link to="/bookmarks"><div className="nav-title">Bookmarks</div></Link>
                 { logInStatus && <div className="nav-title" onClick={() => {setLogOutFocus(true); setLogOutClicked(true)}}>Log out</div> }
