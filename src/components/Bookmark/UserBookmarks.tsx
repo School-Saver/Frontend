@@ -83,7 +83,7 @@ export default function UserBookmarks({ id }: Props) {
             <button className="add-bookmark" onClick={() => { setAddBookmarks(true); setAddPopUpfocus(true) }}>Add Bookmark</button>
             { addBookmarks &&  addPopUpfocus && <AddBookmark id={id} popUpRef={addPopUpRef}/> }
             { buttonClicked && deletePopUpfocus && <WarningPopup popUpRef={deletePopUpRef} setButtonClicked={setButtonClicked} setDeleteConfirmation={setDeleteConfirmation} /> }
-            { (async () => deleteConfirmation && (bookmark && link) && await deleteBookmark(id, bookmark, link)) && window.location.reload() }
+            { (async () => deleteConfirmation && (bookmark && link) && await deleteBookmark(id, bookmark, link) && window.location.reload())() }
             { buttonClicked && deleteConfirmation && setButtonClicked(false) }
             { !buttonClicked && deleteConfirmation && setDeleteConfirmation(false)}
             {/* { deleteConfirmation && window.location.reload() } */}
