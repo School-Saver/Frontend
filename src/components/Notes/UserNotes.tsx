@@ -173,10 +173,6 @@ export default function UserNotes({ id, notes }: { id: number, notes: any }) {
             { addMode.truthy && addPopUpfocus && <AddNote notes={notes} id={id} popUpRef={addPopUpRef} subject={addMode.subject} day={addMode.day} note={addMode.note} current_subject={addMode?.current_subject} current_day={addMode?.current_day}/> }
             { editMode.truthy && editPopUpfocus && <EditPopup notes={notes} id={id} popUpRef={editPopUpRef} subject={editMode.subject} note={editMode.note} current_subject={editMode.current_subject} current_day={editMode?.current_day} current_note={editMode?.current_note}/> }
             { deleteButtonClicked && deletePopUpfocus && <WarningPopup popUpRef={deletePopUpRef} setButtonClicked={setDeleteButtonClicked} setDeleteConfirmation={setDeleteConfirmation}/> }
-            {/* { deleteConfirmation && deleteNotes(notes, id, deleteMode.subject, deleteMode.day, deleteMode.note)}
-            { deleteButtonClicked && deleteConfirmation && setDeleteButtonClicked(false) }
-            { !deleteButtonClicked && deleteConfirmation && setDeleteConfirmation(false)}
-            { deleteConfirmation && window.location.reload() } */}
         </>
     )
 }

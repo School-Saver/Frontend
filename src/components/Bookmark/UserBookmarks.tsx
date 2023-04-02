@@ -100,8 +100,6 @@ export default function UserBookmarks({ id }: Props) {
             <button className="add-bookmark" onClick={() => { setAddBookmarks(true); setAddPopUpfocus(true) }}>Add Bookmark</button>
             { addBookmarks &&  addPopUpfocus && <AddBookmark id={id} popUpRef={addPopUpRef}/> }
             { buttonClicked && deletePopUpfocus && <WarningPopup popUpRef={deletePopUpRef} setButtonClicked={setButtonClicked} setDeleteConfirmation={setDeleteConfirmation} /> }
-            {/* { buttonClicked && deleteConfirmation && setButtonClicked(false) }
-            { !buttonClicked && deleteConfirmation && setDeleteConfirmation(false)} */}
         </>
     )
 }

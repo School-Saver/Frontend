@@ -14,8 +14,10 @@ export default function Navbar() {
     const [logInStatus, setLogInStatus] = useState(Boolean(auth.currentUser))
 
     if (logOutConfirmation) {
-        logout()
-        window.location.reload()
+        (async () => {
+            await logout()
+            window.location.reload()
+        })()
     }
 
     useEffect(() => {
