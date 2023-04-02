@@ -2,13 +2,12 @@ import axios from "axios"
 import { BookmarkRow } from "../interfaces/interface";
 import { createUserWithEmailAndPassword, signInWithEmailAndPassword, signOut } from "firebase/auth"
 import { auth } from "../firebase-config";
-import { config } from "dotenv"
-config()
 
-const URL = process.env.SERVER_URL
+const URL = process.env.REACT_APP_SERVER_URL
 
 export async function createBookmark(bookmark: string, link: string) {
     try {
+        console.log(URL)
         await axios.post(`${URL}/api/v1/bookmarks/`, {
             bookmark: bookmark,
             link: link
