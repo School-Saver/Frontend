@@ -77,10 +77,8 @@ export async function deleteBookmark(id: number, bookmark: string, link: string)
                 link: link
             }
         })
-        return true;
     } catch(err) {
         console.log(err)
-        return false;
     }
 }
 

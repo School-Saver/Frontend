@@ -58,11 +58,18 @@ export default function UserBookmarks({ id }: Props) {
 
     if (deleteConfirmation && (bookmark && link)) {
         (async () => {
-            const response = await deleteBookmark(id, bookmark, link)
-            if (response) {
-                window.location.reload()
-            }
+            await deleteBookmark(id, bookmark, link)
+            window.location.reload()
         })()
+    }
+
+
+    if (buttonClicked && deleteConfirmation) {
+        setButtonClicked(false)
+    }
+
+    if (!buttonClicked && deleteConfirmation) {
+        setDeleteConfirmation(false)
     }
 
     return (
@@ -93,10 +100,8 @@ export default function UserBookmarks({ id }: Props) {
             <button className="add-bookmark" onClick={() => { setAddBookmarks(true); setAddPopUpfocus(true) }}>Add Bookmark</button>
             { addBookmarks &&  addPopUpfocus && <AddBookmark id={id} popUpRef={addPopUpRef}/> }
             { buttonClicked && deletePopUpfocus && <WarningPopup popUpRef={deletePopUpRef} setButtonClicked={setButtonClicked} setDeleteConfirmation={setDeleteConfirmation} /> }
-            {/* { deleteConfirmation && (bookmark && link) && deleteBookmark(id, bookmark, link)} */}
-            { buttonClicked && deleteConfirmation && setButtonClicked(false) }
-            { !buttonClicked && deleteConfirmation && setDeleteConfirmation(false)}
-            {/* { deleteConfirmation && window.location.reload() } */}
+            {/* { buttonClicked && deleteConfirmation && setButtonClicked(false) }
+            { !buttonClicked && deleteConfirmation && setDeleteConfirmation(false)} */}
         </>
     )
 }

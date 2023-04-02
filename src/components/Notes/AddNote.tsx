@@ -58,7 +58,7 @@ export default function AddNote({ notes, id, popUpRef, subject, day, note, curre
                     day_object[newDay] = [newNote]
                     notes[newSubject] = day_object
                     setMessage("Adding Note...")
-                    updateUserNotes(notes, id)
+                    await updateUserNotes(notes, id)
                     window.location.reload()
                     return
                 }
@@ -67,7 +67,7 @@ export default function AddNote({ notes, id, popUpRef, subject, day, note, curre
                 if (valid_day && valid_note) {
                     notes[current_subject][newDay] = [newNote]
                     setMessage("Adding Day...")
-                    updateUserNotes(notes, id)
+                    await updateUserNotes(notes, id)
                     window.location.reload()
                     return
                 }
@@ -77,7 +77,7 @@ export default function AddNote({ notes, id, popUpRef, subject, day, note, curre
             if (newSubject && newDay && newNote) {
                 if (valid_subject && valid_day && valid_note) {
                     setMessage("Creating Note...")
-                    createUserNotes(id, newSubject, newDay, newNote)
+                    await createUserNotes(id, newSubject, newDay, newNote)
                     window.location.reload()
                     return
                 }
@@ -93,7 +93,7 @@ export default function AddNote({ notes, id, popUpRef, subject, day, note, curre
                 if (newNote && valid_note) {
                     notes[current_subject][current_day].push(newNote)
                     setMessage("Adding Note...")
-                    updateUserNotes(notes, id)
+                    await updateUserNotes(notes, id)
                     window.location.reload()
                     return
                 }

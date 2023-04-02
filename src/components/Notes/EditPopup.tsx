@@ -35,7 +35,7 @@ export default function EditPopup({ notes, id, popUpRef, subject, note, current_
         return /[a-zA-Z0-9 \._]{4,100}/.test(newNote)
     }
 
-    function handleSubmit(event: React.MouseEvent<HTMLFormElement, MouseEvent>) {
+    async function handleSubmit(event: React.MouseEvent<HTMLFormElement, MouseEvent>) {
         event.preventDefault()
         if (!current_day && newSubject) {
             if (!valid_subject) {
@@ -59,8 +59,8 @@ export default function EditPopup({ notes, id, popUpRef, subject, note, current_
                 }
             }
         }
+        await updateUserNotes(notes, id)
         window.location.reload()
-        updateUserNotes(notes, id)
     }
 
     function onChange() {
