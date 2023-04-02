@@ -3,11 +3,15 @@ import { BookmarkRow } from "../interfaces/interface";
 import { createUserWithEmailAndPassword, signInWithEmailAndPassword, signOut } from "firebase/auth"
 import { auth } from "../firebase-config";
 
-const URL = "https://frontend-iota-ecru.vercel.app"
+const URL = "http://localhost:5000"
 
 export async function createBookmark(bookmark: string, link: string) {
     try {
         await axios.post(`${URL}/api/v1/bookmarks/`, {
+            headers: {
+                'Accept': 'application/json',
+                'Content-Type': 'application/json'
+            },
             bookmark: bookmark,
             link: link
         })
