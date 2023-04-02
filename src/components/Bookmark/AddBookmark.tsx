@@ -25,7 +25,7 @@ export default function Bookmark({ id, popUpRef }: { id: number, popUpRef: React
         setValid(true)
         setMessage("Creating Bookmark...")
         await addBookmark(id, bookmark, link)
-        window.location.reload()
+        // window.location.reload()
     }
 
     const valid_bookmark = /[a-zA-Z0-9]{4,}/.test(bookmark) && bookmark
