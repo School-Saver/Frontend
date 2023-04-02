@@ -3,7 +3,7 @@ import { BookmarkRow } from "../interfaces/interface";
 import { createUserWithEmailAndPassword, signInWithEmailAndPassword, signOut } from "firebase/auth"
 import { auth } from "../firebase-config";
 
-const URL = "https://frontend-git-main-school-saver.vercel.app/"
+const URL = "https://frontend-git-main-school-saver.vercel.app"
 
 export async function createBookmark(bookmark: string, link: string) {
     try {
