@@ -68,7 +68,7 @@ export default function Navbar() {
     return (
         <>
             <nav>
-                <Link to="/"><img src={require("../../img/logo.png")} className="nav-title" alt="logo"/></Link>
+                <Link to="/"><div className="nav-title">Home</div></Link>
                 <Link to="/notes"><div className="nav-title">Notes</div></Link>
                 <Link to="/bookmarks"><div className="nav-title">Bookmarks</div></Link>
                 { logInStatus && <div className="nav-title" onClick={() => {setLogOutFocus(true); setLogOutClicked(true)}}>Log out</div> }
