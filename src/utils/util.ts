@@ -69,7 +69,7 @@ export async function containsBookmarks(id: number): Promise<boolean> {
     }
 }
 
-export async function deleteBookmark(id: number, bookmark: string, link: string) {
+export async function deleteBookmark(id: number, bookmark: string, link: string): Promise<Boolean> {
     try {
         await axios.delete(`${URL}/api/v1/bookmarks/${id}`, {
             data: { 
@@ -77,8 +77,10 @@ export async function deleteBookmark(id: number, bookmark: string, link: string)
                 link: link
             }
         })
+        return true;
     } catch(err) {
         console.log(err)
+        return false;
     }
 }
 
